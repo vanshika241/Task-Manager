@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="Task Mate Image.png" alt="TaskManager Logo">
+            </div>
+            <ul class="nav">
+                <li id="create-task-link" class="active">Create Task</li>
+                <li id="all-tasks-link">All Tasks</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Create Task Section -->
+            <div id="create-task-section">
+                <h2>Create a New Task</h2>
+                <div class="task-input">
+                    <input type="text" id="taskName" placeholder="Task name">
+                    <textarea id="taskDescription" placeholder="Task description"></textarea>
+                    <input type="datetime-local" id="dueDate">
+                    <select id="priority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <button id="addTask">Add Task</button>
+                </div>
+            </div>
+
+            <!-- All Tasks Section -->
+            <div id="all-tasks-section" style="display: none;">
+                <h2>All Tasks</h2>
+                <div class="filters">
+                    <label for="statusFilter">Filter by Status:</label>
+                    <select id="statusFilter">
+                        <option value="all">All</option>
+                        <option value="todo">To Do</option>
+                        <option value="inprogress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <ul id="taskList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
